@@ -68,7 +68,7 @@ while True:
     if not touch.value and touch_state:
         #print("Untouched!")
         startTime = -1
-        # pixel.fill(0x0)
+        pixel.fill(0x0)
         touch_state = False
 
     # check configuration timer
