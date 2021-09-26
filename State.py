@@ -7,6 +7,8 @@ class State:
 
     def start(self):
        pass
+    def end(self):
+       pass
 
     def onTick(self):
        pass

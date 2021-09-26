@@ -15,18 +15,6 @@ from States import States
 from StateKeyboard import StateKeyboard
 from StateConfiguration import StateConfiguration
 
-try:
-    f = open("custom.keys", "r")
-    sstr = f.read()
-    # print (sstr)
-except OSError:
-    #print("no custom keys")
-    pass
-
-
-# test = microcontroller.nvm[0]
-# print(test)
-
 # create the pixel and turn it off
 pixel = neopixel.NeoPixel(board.NEOPIXEL, 1, brightness=0.1)
 pixel.fill(0x0)
@@ -37,15 +25,12 @@ keyboard_layout = KeyboardLayoutUS(keyboard)  # We're in the US :)
 
 states = States()
 states.stateKeyboard = StateKeyboard(keyboard)
-#states.stateKeyboard.keyboard = keyboard
-#states.stateKeyboard.keyboard_layout = keyboard_layout
 states.stateKeyboard.pixel = pixel
 
 states.stateConfiguration = StateConfiguration(keyboard)
-#states.stateConfiguration.keyboard = keyboard
-#states.stateConfiguration.keyboard_layout = keyboard_layout
 states.stateConfiguration.pixel = pixel
 
+states.stateKeyboard.start()
 states.currentState = states.stateKeyboard
 
 # create the switch, add a pullup, start it with not being pressed
@@ -104,5 +89,6 @@ while True:
                 states.stateConfiguration.start()
             elif states.currentState is states.stateConfiguration:
                 print("switch to keyboard")
+                states.stateConfiguration.end()
                 states.currentState = states.stateKeyboard
-                pixel.fill(0x0)
+                states.stateKeyboard.start()
