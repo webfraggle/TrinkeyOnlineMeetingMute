@@ -30,3 +30,7 @@ Mac Lock Screen (Ctrl+Cmd+Q)
 * long touch the touch field
 * press the key until your desired config is printed
 * long touch the touch field to save
+
+
+Buy one here:
+https://www.etsy.com/de/listing/1092538069/
