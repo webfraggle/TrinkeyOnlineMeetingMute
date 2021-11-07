@@ -7,18 +7,14 @@ from KeyOptions import KeyOptions
 class StateKeyboard(State):
 
     def __init__(self, keyboard):
-        #print("init StateKeyboard")
         self.keyboard = keyboard
         self.keyboard_layout = KeyboardLayoutUS(self.keyboard)
         self.custom_keys = None
         try:
             f = open("custom.keys", "r")
             self.custom_keys_string = f.read()
-            #print (sstr)
             self.custom_keys = eval(self.custom_keys_string)
-            #print (custom_keys)
         except OSError:
-            #print("no custom keys")
             self.custom_keys = None
             pass
         self.key_output = ""
@@ -32,7 +28,6 @@ class StateKeyboard(State):
 
 
     def onButtonPress(self):
-        #print("do the button Keyboard")
         self.pixel.fill((255, 0, 0))
         if self.custom_keys is not None:
             key_output = self.custom_keys
@@ -47,15 +42,14 @@ class StateKeyboard(State):
     def onButtonRelease(self):
         self.pixel.fill(0x0)
 
-    # our helper function will press the keys themselves
     def make_keystrokes(self, keys, delay):
-        if isinstance(keys, str):  # If it's a string...
-            self.keyboard_layout.write(keys)  # ...Print the string
-        elif isinstance(keys, int):  # If its a single key
-            self.keyboard.press(keys)  # "Press"...
-            self.keyboard.release_all()  # ..."Release"!
-        elif isinstance(keys, (list, tuple)):  # If its multiple keys
-            self.keyboard.press(*keys)  # "Press"...
-            self.keyboard.release_all()  # ..."Release"!
+        if isinstance(keys, str):
+            self.keyboard_layout.write(keys)
+        elif isinstance(keys, int):
+            self.keyboard.press(keys)
+            self.keyboard.release_all()
+        elif isinstance(keys, (list, tuple)):
+            self.keyboard.press(*keys)
+            self.keyboard.release_all()
         time.sleep(delay)
 

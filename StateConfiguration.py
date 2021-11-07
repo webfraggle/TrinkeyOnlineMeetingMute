@@ -8,7 +8,6 @@ import time
 class StateConfiguration(State):
 
     def __init__(self, keyboard):
-        print("init StateConfiguration")
         self.keyboard = keyboard
         self.keyboard_layout = KeyboardLayoutUS(self.keyboard)
 
@@ -17,11 +16,9 @@ class StateConfiguration(State):
         self.current = microcontroller.nvm[0]
         if self.current >= len(KeyOptions.OPTIONS):
             self.current = 0
-        print("start configuration "+str(self.current))
         self.make_keystrokes("Start Configuration")
         self.make_keystrokes(Keycode.ENTER)
         self.make_keystrokes(Keycode.ENTER)
-        #print("Current Configuration "+KeyOptions.OPTIONS[self.current]["description"])
         self.make_keystrokes("Current Configuration ")
         self.make_keystrokes(Keycode.ENTER)
         self.make_keystrokes(KeyOptions.OPTIONS[self.current]["description"])
@@ -33,7 +30,6 @@ class StateConfiguration(State):
         pass
 
     def onButtonPress(self):
-        print("do the button config")
         self.current += 1
         if self.current >= len(KeyOptions.OPTIONS):
             self.current = 0
