@@ -19,6 +19,8 @@ class KeyOptions():
    {'keys': (Keycode.ALT, Keycode.SHIFT, Keycode.M), 'description': 'Win BigBlueButton ToggleMute Alt Shift M'},
    {'keys': (Keycode.CONTROL, Keycode.OPTION, Keycode.M), 'description': 'Mac BigBlueButton ToggleMute Ctrl Option M'},
 
+   {'keys': (Keycode.F5), 'description': 'Win Reload F5'},
+
 
    {'keys': (Keycode.GUI, Keycode.L), 'description': 'Win Lock Screen Win L'},
    {'keys': (Keycode.CONTROL, Keycode.COMMAND, Keycode.Q), 'description': 'Mac Lock Screen Ctrl Cmd Q'}
