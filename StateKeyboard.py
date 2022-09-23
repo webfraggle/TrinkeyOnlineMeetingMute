@@ -10,6 +10,7 @@ class StateKeyboard(State):
         self.keyboard = keyboard
         self.keyboard_layout = KeyboardLayoutUS(self.keyboard)
         self.custom_keys = None
+        self.custom_password = None
         try:
             f = open("custom.keys", "r")
             self.custom_keys_string = f.read()
@@ -18,6 +19,12 @@ class StateKeyboard(State):
             self.custom_keys = None
             pass
         self.key_output = ""
+        try:
+            f = open("custom.password", "r")
+            self.custom_password = f.read()
+        except OSError:
+            self.custom_password = None
+            pass
 
     def start(self):
         self.pixel.fill(0x0)
@@ -26,9 +33,12 @@ class StateKeyboard(State):
             nr = 0
         self.key_output = KeyOptions.OPTIONS[nr]["keys"]
 
-
     def onButtonPress(self):
         self.pixel.fill((255, 0, 0))
+        if self.custom_password is not None:
+            self.make_keystrokes(self.custom_password, 0)
+            return
+
         if self.custom_keys is not None:
             key_output = self.custom_keys
         else:
@@ -39,6 +49,7 @@ class StateKeyboard(State):
         else:
             self.make_keystrokes(key_output, delay=0)
         pass
+
     def onButtonRelease(self):
         self.pixel.fill(0x0)
 
