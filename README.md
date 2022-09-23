@@ -51,6 +51,22 @@ For changing the shortcut into a custom shortcut you need to follow these steps:
 * Press the reset button again 
   OR 
   remove and put it in again
+  
+## Typing a custom string
+
+It is possible to let the button a custom string. It can be used to type in a password, but because of security issues I will not recommend it.
+
+* Press and hold down the button and press the reset button (small button on the back) 
+  OR 
+  remove the button from USB, press and hold down the button and put it back into USB.
+  
+* A disk with the name CIRCUITPY will appear in you file explorer
+* Open the disk
+* Rename the file "custom-off.password" to "custom.password"
+* Open the file "custom.password" in a text-editor (e.g. Notepad on windows) and change the text to your wanted string. But be aware, the button uses US keyboard layout. If you have by default another keyboard layout, e.g. german, then some charactors are on other keys. A simple example is that on german keyboards y and z are swapped. If you want the button to type a z with german keyboard layout you have to use the character y. And so there are many more charactors on different keys.
+* Press the reset button again OR remove and put it in again
+
+
 
 ## Autohotkey script to bring Teams in front and mute/unmute
 
