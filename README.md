@@ -68,7 +68,7 @@ It is possible to let the button a custom string. It can be used to type in a pa
 
 
 
-## Autohotkey script to bring Teams in front and mute/unmute
+## Autohotkey script to bring up Teams to front and mute/unmute
 
 I added a autohotkey script (Autohotkey is only available for Windows) to bring Microsoft Teams in front and mute/unmutes. Shortcut is CTRL+ALT+SHIFT+M.
 
