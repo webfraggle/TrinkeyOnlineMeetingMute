@@ -1,5 +1,7 @@
 # Trinkey Neokey Teams / Zoom / Skype / Webex configurable external extra audio mute unmute button (CircuitPython)
 
+![alt text](https://www.ketzler.de/wp-content/uploads/2021/11/DSC07501_1-1-1140x600.jpg)
+
 Windows and MacOS
 
 The following key combinations can be configured by default (for custom shortcuts look at the end)˘:
