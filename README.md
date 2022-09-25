@@ -76,4 +76,4 @@ This can be used with the custom shortcut mode described above
 
 
 Buy one here:
-https://www.etsy.com/de/listing/1092538069/
+https://www.tindie.com/products/webfraggle/teams-zoom-webex-skype-mute-button/
