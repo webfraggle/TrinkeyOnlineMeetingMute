@@ -7,6 +7,7 @@ cp -X StateConfiguration.py /Volumes/CIRCUITPY
 cp -X StateKeyboard.py /Volumes/CIRCUITPY
 cp -X States.py /Volumes/CIRCUITPY
 cp -X custom-off.keys /Volumes/CIRCUITPY
+cp -X custom-off.password /Volumes/CIRCUITPY
 cp -X boot.py /Volumes/CIRCUITPY
 
 rm  /Volumes/CIRCUITPY/._*
